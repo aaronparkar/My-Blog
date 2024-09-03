@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,
+
+initial-scale=1.0">
+
+<title>Simple Blog</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<style type="text/css" id="dcoder_stylesheet">body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.post-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#posts {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}</style></head>
+
+<body>
+
+<h1>My Blog</h1>
+
+<div class="post-form">
+
+<h2>Create a New Post</h2>
+
+<textarea id="postContent" placeholder="Write your post
+
+here..."></textarea>
+
+<button onclick="addPost()">Post</button>
+
+</div>
+
+<div id="posts">
+
+<h2>Posts</h2>
+
+<!-- Posts will be
+
+dynamically added here-->
+
+</div>
+
+<script src="script.js"></
+
+script>
+
+</body>
+
+</html></script><script type="text/javascript" id="dcoder_script">function addPost() {
+    const postContent = document.getElementById('postContent').value;
+
+    if (postContent.trim() === '') {
+        alert('Please write something before posting.');
+        return;
+    }
+
+    const postElement = document.createElement('div');
+    postElement.classList.add('post');
+    postElement.textContent = postContent;
+
+    document.getElementById('posts').appendChild(postElement);
+
+    document.getElementById('postContent').value = '';
+}</script></body></html>
